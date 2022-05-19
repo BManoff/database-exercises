@@ -14,17 +14,21 @@ WHERE
 FROM
     employees
 WHERE
-    first_name = 'Irena' OR 'Vidya' OR 'Maya';
--- 241
+    first_name = 'Irena'
+    OR first_name = 'Vidya' 
+    OR first_name = 'Maya';
+-- 709
 
  SELECT 
     COUNT(first_name)
 FROM
     employees
 WHERE
-    (first_name = 'Irena' OR 'Vidya' OR 'Maya')
+    (first_name = 'Irena'
+    OR first_name = 'Vidya' 
+    OR first_name = 'Maya')
     AND gender = 'M';
--- 144
+-- 441
 
 
  SELECT 
