@@ -66,10 +66,10 @@ FROM
 WHERE
     (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
     AND 
-(DAYOFMONTH(birth_date) = 31
+(DAYOFMONTH(birth_date) = 25
         AND MONTH(birth_date) = 12)
 	ORDER BY birth_date asc, hire_date desc;
--- 358 <-- Employees returned
--- Yannik Chiodo <-- Oldest employee who was hired last
--- Przemyslawa Heydon <-- Youngest employee who was hired first
+-- 362 <-- Employees returned
+-- Khun Bernini <-- Oldest employee who was hired last
+-- Doudi Pettis <-- Youngest employee who was hired first
 

@@ -26,15 +26,16 @@ FROM
 WHERE
     (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
     AND 
-(DAYOFMONTH(birth_date) = 31
+(DAYOFMONTH(birth_date) = 25
         AND MONTH(birth_date) = 12)
 	ORDER BY hire_date
     LIMIT 5;
--- Magdalena Guting
--- Chaosheng Plavsic
--- Sachin Brodie
--- Douadi Streit
--- Ymte Schlegelmilch
+-- Alselm, Cappello
+-- Utz, Mandell
+-- Bouchung, Schreiter
+-- Baocai, Kushner
+-- Petter, Stroustrup
+
 
 SELECT 
     first_name, last_name
@@ -43,14 +44,15 @@ FROM
 WHERE
     (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
     AND 
-(DAYOFMONTH(birth_date) = 31
+(DAYOFMONTH(birth_date) = 25
         AND MONTH(birth_date) = 12)
 	ORDER BY hire_date
     LIMIT 5 OFFSET 45;
--- Tomofumi, Ducloy
--- Willard, Itschner
--- Ziyad, Schueller
--- Claude, Ventosa
--- Alenka, Garrabrants
+-- Pranay, Narwekar
+-- Marjo, Farrow
+-- Ennio, Karcich
+-- Dines, Lubachevsky
+-- Ipke, Fontan
+
 
 

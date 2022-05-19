@@ -83,9 +83,9 @@ FROM
 WHERE
     (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
     AND 
-(DAYOFMONTH(birth_date) = 31
+(DAYOFMONTH(birth_date) = 25
         AND MONTH(birth_date) = 12);
--- 358
+-- 362
 
 SELECT 
     count(*)
