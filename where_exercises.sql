@@ -14,10 +14,18 @@ WHERE
 FROM
     employees
 WHERE
-    first_name OR ('Irena' , 'Vidya', 'Maya');
--- ERROR confused what is wanted here?
+    first_name = 'Irena' OR 'Vidya' OR 'Maya';
+-- 241
 
--- 4?
+ SELECT 
+    COUNT(first_name)
+FROM
+    employees
+WHERE
+    (first_name = 'Irena' OR 'Vidya' OR 'Maya')
+    AND gender = 'M';
+-- 144
+
 
  SELECT 
     COUNT(*)
@@ -56,8 +64,39 @@ WHERE
 -- 135214
 
 SELECT 
-    birth_date
+    COUNT(birth_date)
 FROM
     employees
 WHERE
-    birth_date %-12-25;
+    DAYOFMONTH(birth_date) = 31
+        AND MONTH(birth_date) = 12;
+-- 818
+
+SELECT 
+    COUNT(hire_date)
+FROM
+    employees
+WHERE
+    (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
+    AND 
+(DAYOFMONTH(birth_date) = 31
+        AND MONTH(birth_date) = 12);
+-- 358
+
+SELECT 
+    count(*)
+FROM
+    employees
+WHERE
+    last_name LIKE '%q%';
+-- 1873
+
+SELECT 
+    count(*)
+FROM
+    employees
+WHERE
+    last_name LIKE '%q%'
+        AND last_name NOT LIKE '%qu%';
+-- 547
+        
