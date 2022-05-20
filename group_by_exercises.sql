@@ -31,7 +31,7 @@ WHERE
 -- Qiwen
 
 SELECT 
-    first_name, COUNT(*) as 'Gender count'
+    first_name, gender, COUNT(*) as 'Gender count'
 FROM
     employees
 GROUP BY first_name , gender
