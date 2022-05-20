@@ -67,3 +67,48 @@ SELECT
 FROM
     salaries
 GROUP BY emp_no;
+
+
+SELECT DISTINCT
+    (dept_no) AS department, COUNT(emp_no) AS employee_count
+FROM
+    dept_emp
+GROUP BY dept_no;
+
+SELECT DISTINCT
+    (emp_no) AS employee, COUNT(salary) AS different_salaries
+FROM
+    salaries
+GROUP BY emp_no;
+
+SELECT DISTINCT
+    (emp_no) AS employee, MAX(salary) AS maximum_salary
+FROM
+    salaries
+GROUP BY emp_no;
+
+SELECT DISTINCT
+    (emp_no) AS employee, MIN(salary) AS minimum_salary
+FROM
+    salaries
+GROUP BY emp_no;
+
+SELECT DISTINCT
+    (emp_no) AS employee, STD(salary) AS standard_dev_of_salary
+FROM
+    salaries
+GROUP BY emp_no;
+
+SELECT DISTINCT
+    (emp_no) AS employee, MAX(salary) AS maximum_salary
+FROM
+    salaries
+GROUP BY emp_no, salary
+HAVING salary > 150000;
+
+SELECT DISTINCT
+    (emp_no) AS employee, AVG(salary) AS average_salary
+FROM
+    salaries
+GROUP BY emp_no, salary
+HAVING salary between 80000 and 90000;
