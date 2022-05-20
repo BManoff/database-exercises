@@ -13,12 +13,12 @@ WHERE
 SELECT 
     first_name,
     last_name,
-    DATEDIFF(NOW(), hire_date) AS 'Days at the company'
+    DATEDIFF(NOW(), hire_date) AS 'days_at_the_company'
 FROM
     employees
 WHERE
     (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
-        AND (DAYOFMONTH(birth_date) = 31
+        AND (DAYOFMONTH(birth_date) = 25
         AND MONTH(birth_date) = 12);
 
 SELECT 
