@@ -1,6 +1,9 @@
 use employees;
 
-SELECT Distinct title FROM titles;
+SELECT DISTINCT
+    title
+FROM
+    titles;
 -- 7
 
 SELECT 
@@ -31,7 +34,7 @@ WHERE
 -- Qiwen
 
 SELECT 
-    first_name, gender, COUNT(*) as 'Gender count'
+    first_name, gender, COUNT(gender) as 'Gender count'
 FROM
     employees
 GROUP BY first_name , gender
@@ -51,17 +54,16 @@ ORDER BY first_name;
             '_',
             SUBSTR(birth_date, 6, 2),
             SUBSTR(birth_date, 3, 2)
-	)) AS 'Number_of_usernames',
-    first_name,
-    last_name,
-    birth_date
+	)) AS 'Number_of_usernames'
 FROM
     employees
-GROUP BY first_name, last_name, birth_date
-ORDER BY 'Number_of_usernames';
+GROUP BY username
+having number_of_usernames > 1;
 -- Yes, there are duplicate user names. 
--- Bonus: There are 6 duplicate usernames.
+-- Bonus: 
 
+
+-- Bonus Questions:
 SELECT 
     AVG(salary), emp_no
 FROM
