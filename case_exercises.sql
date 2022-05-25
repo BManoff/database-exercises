@@ -24,16 +24,16 @@ group by decade_born_in;
 
 -- #4
 SELECT
-  dept_name,
+  -- dept_name,
     CASE
        WHEN dept_name IN ('Research', 'Development') THEN 'R&D'
         WHEN dept_name IN ('Sales', 'Marketing') THEN 'Sales & Marketing'
         WHEN dept_name IN ('production', 'quality') THEN 'Prod & QM'
         When dept_name IN ('Finance', 'Human') THEN 'Finance & HR'
         When dept_name like 'Customer Service' Then 'Customer Service'
-    END AS department_categories, AVG(salary) as 'average_salary'
+    END AS department_catagories, AVG(salary) as 'average_salary'
     from departments
 join dept_emp using (dept_no)
 join salaries using (emp_no)
 where salaries.to_date > now() and dept_emp.to_date > now()
-group by 'department_catagories';
+group by department_catagories;
